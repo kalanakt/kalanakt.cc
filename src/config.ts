@@ -7,4 +7,4 @@ export const SITE = {
 };
 
 export const GITHUB_REPO_URL = "https://github.com/kalanakt/";
-export const LINKEDIN_URL = "https://linkedin.com/in/kalanakt";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/kalanakt/";

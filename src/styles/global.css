@@ -1,5 +1,5 @@
 :root {
-  --color-primary: rgba(0,0,0,0);
+  --color-primary: rgba(0, 0, 0, 0);
 
   --font-size-2sm: 0.625rem;
   --font-size-sm: 0.75rem;
@@ -24,7 +24,7 @@
 
 html,
 body {
-  font-family: 'Roboto Mono';
+  font-family: "Roboto Mono";
   min-height: 100vh;
   font-size: 100%;
   line-height: 1.3;
@@ -34,7 +34,7 @@ body {
 h1 {
   font-weight: 900;
   font-size: var(--font-size-2xl);
-  font-family: 'Merriweather';
+  font-family: "Poppins", sans-serif, arial, helvetica;
   line-height: 1.6;
   letter-spacing: 2px;
 }
@@ -42,14 +42,15 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: var(--font-size-xl);
-  font-family: 'Merriweather';
+  font-family: "Poppins", sans-serif, arial, helvetica;
   line-height: 1.6;
   letter-spacing: 2px;
 }
 
-p, li {
+p,
+li {
   font-size: var(--font-size-md);
-  line-height: 1.50;
+  line-height: 1.5;
   text-align: justify;
   text-justify: inter-word;
 }
