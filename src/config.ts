@@ -1,5 +1,5 @@
 export const SITE = {
-  title: "KalanaKt - Kalana Kithmina",
+  title: "Kalana Kithmina (KalanaKt)",
   website: "https://kalanakt.vercel.com",
   description:
     "Thoughts. Learning about math and programming. Currently working as a Software Engineer at Netronk Innovations",
