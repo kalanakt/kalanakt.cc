@@ -1,26 +1,26 @@
 ---
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection, CollectionEntry } from "astro:content";
 
-import Link from '../components/Link.astro';
-import Layout from '../layout/Layout.astro';
-import NavOptions from '../components/NavOptions.astro';
+import Link from "../components/Link.astro";
+import Layout from "../layout/Layout.astro";
+import NavOptions from "../components/NavOptions.astro";
 
 interface Props {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<"blog">;
 }
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection("blog");
 
-  return posts.map(post => ({
+  return posts.map((post) => ({
     params: {
       slug: post.slug,
     },
     props: {
       post,
-    }
+    },
   }));
 }
 
@@ -32,18 +32,20 @@ const { Content } = await post.render();
 <Layout>
   <NavOptions />
   <section>
-  <h1>
-    {post.data.title}
-  </h1>
+    <h1>
+      {post.data.title}
+    </h1>
     <section class="tags">
-      {post.data.tags.map((tag: string) => (
-        <Link href={`/tag/${tag}`}>
-          <p>#{tag}</p>
-        </Link>
-      ))}
+      {
+        post.data.tags.map((tag: string) => (
+          <Link href={`/tag/${tag}`}>
+            <p>#{tag}</p>
+          </Link>
+        ))
+      }
     </section>
   </section>
-  <article>
+  <article class="prose">
     <Content />
   </article>
 </Layout>
