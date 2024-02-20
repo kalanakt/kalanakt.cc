@@ -2,8 +2,8 @@ export const SITE = {
   title: "Kalana Kithmina (KalanaKt)",
   website: "https://kalanakt.vercel.com",
   description:
-    "Thoughts. Learning about math and programming. Currently working as a Software Engineer at Netronk Innovations",
-  author: "Kalana Kithmina",
+    "Welcome to my portfolio! I am a CTO at Netronk Innovation, with a passion for learning new programming languages. I have experience in freelancing on platforms like Fiverr and am motivated to become a full-stack developer. Explore my work and feel free to get in touch.",
+  author: "Kalanakt",
 };
 
 export const GITHUB_REPO_URL = "https://github.com/kalanakt/";
