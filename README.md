@@ -13,3 +13,9 @@ npm install
 ```bash
 npm run dev
 ```
+
+**publish**
+
+```bash
+./publish.sh "message"
+```
