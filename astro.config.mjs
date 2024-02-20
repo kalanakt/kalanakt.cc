@@ -4,10 +4,12 @@ import sitemap from '@astrojs/sitemap';
 import remarkMath from 'remark-math';
 import vercel from "@astrojs/vercel/static";
 
+import astroExpressiveCode from "astro-expressive-code";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kalanakt.vercel.app',
-  integrations: [mdx(), sitemap()],
+  integrations: [astroExpressiveCode(),, mdx(), sitemap()],
   output: "static",
   adapter: vercel(),
   markdown: {

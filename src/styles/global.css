@@ -89,6 +89,16 @@ pre {
     overflow-x: scroll;
 }
 
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -121,15 +131,6 @@ a::before {
 a:hover::before {
     bottom: 0;
     height: 100%;
-}
-
-pre::-webkit-scrollbar {
-  display: none;
-}
-
-pre {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 li,
