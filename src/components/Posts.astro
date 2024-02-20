@@ -48,4 +48,14 @@ const { posts } = Astro.props;
   .posts :global(a) {
     flex: 1;
   }
+
+  @media screen and (max-width: 600px) {
+    .posts ul li {
+      flex-direction: column;
+    }
+
+    .posts ul {
+      gap: var(--spacing-2x);
+    }
+  }
 </style>
