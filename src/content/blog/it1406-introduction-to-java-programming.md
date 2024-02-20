@@ -4,7 +4,6 @@ pubDate: 2024-02-10
 tags:
   - code
   - java
-  - programming
 ---
 
 ## History of Java

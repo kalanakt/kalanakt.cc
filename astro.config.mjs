@@ -5,12 +5,10 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import vercel from "@astrojs/vercel/static";
 
-import tailwind from "@astrojs/tailwind";
-
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://vitorsalmeida.com',
-  integrations: [mdx(), sitemap(), tailwind()],
+  site: 'https://kalanakt.vercel.app',
+  integrations: [mdx(), sitemap()],
   output: "static",
   adapter: vercel(),
   markdown: {

@@ -51,7 +51,6 @@ const {
       crossorigin="anonymous"></script>
   </head>
   <body>
-    <header id="warning"></header>
     <main>
       <slot />
     </main>
@@ -89,14 +88,3 @@ const {
     }
   }
 </style>
-
-<script type="text/javascript">
-  import WebGL from "three/addons/capabilities/WebGL.js";
-  if (WebGL.isWebGLAvailable()) {
-    // Initiate function or other initializations here
-    animate();
-  } else {
-    const warning = WebGL.getWebGLErrorMessage();
-    document.getElementById("warning").appendChild(warning);
-  }
-</script>
