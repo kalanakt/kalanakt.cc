@@ -9,7 +9,7 @@ tags:
 
 Have you ever needed to swap the values of two variables in JavaScript? There's a neat trick using array destructuring that allows you to do this in just one line of code! In this post, we'll explore how to use this trick and why it can be useful in your programming endeavors.
 
-## The Problem:
+**The Problem:**
 
 Swapping variables traditionally involves using a temporary variable to hold one of the values while you reassign the variables. For example:
 
@@ -20,7 +20,7 @@ let temp = a;
 a = b;
 b = temp;
 ```
-## The Solution:
+**The Solution:**
 
 With array destructuring, you can swap variables without the need for a temporary variable. Here's how:
 
@@ -32,7 +32,7 @@ let b = 2;
 
 In this example, [b, a] creates a new array with the values of b and a swapped, and then the destructuring assignment [a, b] assigns these values back to a and b respectively, effectively swapping them.
 
-### Why It's Useful:
+**Why It's Useful:**
 
 Using array destructuring to swap variables is not only concise but also more readable than the traditional approach. It can be particularly handy in situations where you need to swap variables frequently or where you want to write more expressive code.
 

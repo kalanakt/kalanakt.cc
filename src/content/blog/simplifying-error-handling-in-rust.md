@@ -9,7 +9,7 @@ tags:
 
 Error handling is a crucial aspect of programming, ensuring that your code can gracefully handle unexpected situations. In Rust, the `?` operator provides a concise and effective way to propagate errors up the call stack, making your code cleaner and more readable. In this post, we'll explore how the `?` operator works and how you can use it to simplify error handling in your Rust code.
 
-### The Problem:
+**The Problem:**
 
 Traditional error handling in Rust often involves using `match` or `if let` statements to handle `Result` types. For example:
 
@@ -27,7 +27,7 @@ fn read_file_contents(file_path: &str) -> Result<String, io::Error> {
 }
 ```
 
-### The Solution:
+**The Solution:**
 
 The `?` operator can be used to simplify the error handling in the above example. Here's how the same function can be written using the `?` operator:
 
@@ -42,7 +42,7 @@ fn read_file_contents(file_path: &str) -> Result<String, io::Error> {
 
 In this example, the `?` operator is used after each potentially error-prone operation (`File::open` and `file.read_to_string`). If an error occurs, the `?` operator will return early from the function with the error, simplifying the error-handling logic.
 
-### Why It's Useful:
+**Why It's Useful:**
 
 Using the `?` operator can significantly reduce the boilerplate code associated with error handling in Rust. It makes the code more readable by focusing on the main logic of the function rather than error-checking code.
 
