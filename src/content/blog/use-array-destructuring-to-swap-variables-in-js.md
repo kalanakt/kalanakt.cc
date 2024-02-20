@@ -13,7 +13,7 @@ Have you ever needed to swap the values of two variables in JavaScript? There's 
 
 Swapping variables traditionally involves using a temporary variable to hold one of the values while you reassign the variables. For example:
 
-```javascript
+```javascript title="temp.js"
 let a = 1;
 let b = 2;
 let temp = a;
@@ -24,7 +24,7 @@ b = temp;
 
 With array destructuring, you can swap variables without the need for a temporary variable. Here's how:
 
-```javascript
+```javascript title="swap.js"
 let a = 1;
 let b = 2;
 [a, b] = [b, a];

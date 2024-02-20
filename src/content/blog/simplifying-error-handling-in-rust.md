@@ -13,7 +13,7 @@ Error handling is a crucial aspect of programming, ensuring that your code can g
 
 Traditional error handling in Rust often involves using `match` or `if let` statements to handle `Result` types. For example:
 
-```rust
+```rust title="read_file.rs"
 fn read_file_contents(file_path: &str) -> Result<String, io::Error> {
     let mut file = match File::open(file_path) {
         Ok(file) => file,
@@ -31,7 +31,7 @@ fn read_file_contents(file_path: &str) -> Result<String, io::Error> {
 
 The `?` operator can be used to simplify the error handling in the above example. Here's how the same function can be written using the `?` operator:
 
-```rust
+```rust title="read_file.rs"
 fn read_file_contents(file_path: &str) -> Result<String, io::Error> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
