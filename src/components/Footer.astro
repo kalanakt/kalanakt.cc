@@ -58,6 +58,7 @@ const navLinks = [
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    flex-direction: row;
     margin-top: var(--spacing-4x);
     padding-top: var(--spacing);
   }
@@ -65,5 +66,12 @@ const navLinks = [
   footer nav ul {
     display: flex;
     gap: var(--spacing-2x);
+  }
+
+  @media screen and (max-width: 600px) {
+    footer {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
   }
 </style>
