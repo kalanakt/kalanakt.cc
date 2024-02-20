@@ -7,9 +7,10 @@ interface Props {
 const { href, isExternal = false } = Astro.props;
 
 const externalProps = isExternal
-  ? { target: '_blank', rel: 'noreferrer noopener' }
+  ? { target: "_blank", rel: "noreferrer noopener" }
   : {};
 ---
+
 <a {...externalProps} href={href}><slot /></a>
 <style>
   a {
@@ -21,5 +22,5 @@ const externalProps = isExternal
 
   a:hover {
     color: #000000b4;
-}
+  }
 </style>
