@@ -67,6 +67,7 @@ code:not(pre code) {
     border-radius: 0.15rem;
     white-space: pre;
     padding: 0 0.4rem 0;
+    border: 1px solid #ddd;
 }
 
 
