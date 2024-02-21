@@ -7,13 +7,13 @@ import { SITE } from "../config";
 
 const parser = new MarkdownIt();
 
-export async function get() {
+export async function  GET(context: { site: any; }) {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
 
   return rss({
     title: SITE.title,
     description: SITE.description,
-    site: SITE.website,
+    site: SITE.website || context.site,
     items: posts.map(({ data, slug, body }) => ({
       link: slug,
       title: data.title,
@@ -21,5 +21,6 @@ export async function get() {
       pubDate: data.pubDate,
       content: sanitizeHtml(parser.render(body))
     })),
+    stylesheet: 'styles.xsl'
   });
 }
