@@ -1,10 +1,10 @@
 ---
-const { post } = Astro.props;
+const { post, link } = Astro.props;
 import Link from "./Link.astro";
 ---
 
 <div class="blog-card animate__animated animate__fadeIn">
-  <Link href={`posts/${post.slug}`}>
+  <Link href={link}>
     <p class="title animate__animated animate__bounceInLeft">
       {post.data.title}
     </p>

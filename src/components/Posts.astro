@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import Link from "./Link.astro";
 import Card from "./Card.astro";
 
 interface Props {
@@ -23,7 +22,7 @@ const { posts } = Astro.props;
         )
         .map((post) => (
           <li>
-            <Card post={post} />
+            <Card post={post} link={`/posts/${post.slug}`} />
           </li>
         ))
     }

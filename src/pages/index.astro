@@ -25,7 +25,7 @@ const projects = await getCollection("projects", ({ data }) => !data.draft);
           .slice(0, 6)
           .map((post) => (
             <li>
-              <Card post={post} />
+              <Card post={post} link={`posts/${post.slug}`} />
             </li>
           ))
       }
@@ -42,7 +42,7 @@ const projects = await getCollection("projects", ({ data }) => !data.draft);
               Math.floor(b.data.pubDate / 1000) -
               Math.floor(a.data.pubDate / 1000),
           )
-          .map((project) => <Card post={project} />)
+          .map((project) => <Card post={project} link={project.data.url} />)
       }
     </ul>
   </section>
