@@ -1,0 +1,53 @@
+---
+import { SITE } from "../config";
+---
+
+<section class="hero">
+  <h1 class="head animate__animated animate__bounce">
+    <span>#.</span>{SITE.author}
+  </h1>
+  <p>{SITE.description}</p>
+  <div class="tags">
+    <span
+      class="tag animate__animated animate__headShake animate__delay-3s"
+      style="background-color: #7289da; color: white">Engineer</span
+    >
+    <span
+      class="tag animate__animated animate__headShake animate__delay-4s"
+      style="background-color: #2c2f33; color: white">Programmer</span
+    >
+    <span
+      class="tag animate__animated animate__headShake animate__delay-5s"
+      style="background-color: #dc143c; color: white">Gamer</span
+    >
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .head {
+    font-size: 3rem;
+  }
+
+  .tag {
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 2px;
+    font-size: smaller;
+  }
+
+  .tags {
+    padding-top: 0.5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .hero {
+      min-height: 40vh;
+    }
+  }
+</style>

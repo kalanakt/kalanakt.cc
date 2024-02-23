@@ -1,0 +1,52 @@
+---
+const { post } = Astro.props;
+import Link from "./Link.astro";
+---
+
+<div class="blog-card animate__animated animate__fadeIn">
+  <Link href={`posts/${post.slug}`}>
+    <p class="title animate__animated animate__bounceInLeft">
+      {post.data.title}
+    </p>
+  </Link>
+  <div class="tags animate__animated animate__bounceInRight">
+    {post.data.tags.map((tag: string) => <p>#{tag}</p>)}
+  </div>
+  <p class="date animate__animated animate__bounceInLeft">
+    {post.data.pubDate.toISOString().split("T")[0]}
+  </p>
+</div>
+
+<style>
+  .blog-card {
+    border: 1px solid #f2ecec;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    animation-duration: 1s;
+    width: 100%;
+  }
+
+  /* Animation classes from Animate.css */
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  .title {
+    color: #333;
+    font-weight: normal;
+    animation-duration: 1s;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .date {
+    font-size: smaller;
+    opacity: 0.7;
+    animation-duration: 1s;
+  }
+</style>

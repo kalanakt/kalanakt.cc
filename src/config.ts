@@ -3,7 +3,7 @@ export const SITE = {
   website: "https://kalanakt.vercel.com",
   description:
     "Welcome to my portfolio! I am a CTO at Netronk Innovation, with a passion for learning new programming stacks. I have experience in freelancing on platforms like Fiverr and am motivated to become a full-stack developer. Explore my work and feel free to get in touch.",
-  author: "Kalanakt",
+  author: "Kalana kt",
 };
 
 export const GITHUB_REPO_URL = "https://github.com/kalanakt/";
