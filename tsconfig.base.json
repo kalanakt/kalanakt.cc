@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "moduleResolution": "Node16",
+    "target": "ES2022",
+    "module": "Node16",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "stripInternal": true,
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "content/*": ["./src/content/*"],
+      "layout/*": ["./src/layout/*"],
+      "styles/*": ["./src/styles/*"]
+    }
+  }
+}
