@@ -1,6 +1,3 @@
-
-**get started...**
-
 ```bash
 git clone git@github.com:kalanakt/portfolio.git
 ```
