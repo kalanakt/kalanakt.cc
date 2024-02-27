@@ -33,10 +33,7 @@ const { Content } = await post.render();
 <Layout>
   <NavOptions />
   <section>
-    <h1
-      transition:name={post.slug}
-      transition:animate={fade({ duration: "0.8s" })}
-    >
+    <h1 transition:name={post.slug}>
       {post.data.title}
     </h1>
     <section class="tags">
