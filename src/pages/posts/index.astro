@@ -4,7 +4,7 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 import Layout from "../../layout/Layout.astro";
 import { SITE } from "../../config";
 import NavOptions from "../../components/NavOptions.astro";
-import Card from "../../components/Card.astro";
+import Card from "../../components/BlogCard.astro";
 ---
 
 <Layout>

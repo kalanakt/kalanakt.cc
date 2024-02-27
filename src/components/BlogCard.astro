@@ -1,25 +1,30 @@
 ---
 const { post, link } = Astro.props;
+import { fade } from "astro:transitions";
 import Link from "./Link.astro";
 ---
 
-<div class="blog-card animate__animated animate__fadeIn">
+<div class="blog-card">
   <Link href={link}>
-    <p class="title animate__animated animate__bounceInLeft">
+    <h4
+      class="title"
+      transition:name={post.slug}
+      transition:animate={fade({ duration: "0.8s" })}
+    >
       {post.data.title}
-    </p>
+    </h4>
   </Link>
-  <div class="tags animate__animated animate__bounceInRight">
+  <div class="tags">
     {post.data.tags.map((tag: string) => <p>#{tag}</p>)}
   </div>
-  <p class="date animate__animated animate__bounceInLeft">
+  <p class="date">
     {post.data.pubDate.toISOString().split("T")[0]}
   </p>
 </div>
 
 <style>
   .blog-card {
-    border: 1px solid #f2ecec;
+    border: 0.5px dashed hsla(196, 61%, 58%, 0.75);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 16px;

@@ -33,17 +33,15 @@ body {
 }
 
 h1 {
-    font-weight: 900;
+    font-weight: 500;
     font-size: var(--font-size-2xl);
-    font-family: "Poppins", sans-serif, arial, helvetica;
     line-height: 1.6;
     letter-spacing: 2px;
 }
 
 h2 {
-    font-weight: 700;
+    font-weight: 400;
     font-size: var(--font-size-xl);
-    font-family: "Poppins", sans-serif, arial, helvetica;
     line-height: 1.6;
     letter-spacing: 2px;
 }

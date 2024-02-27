@@ -1,9 +1,10 @@
 ---
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 import Link from "../../components/Link.astro";
 import Layout from "../../layout/Layout.astro";
 import NavOptions from "../../components/NavOptions.astro";
+import { fade } from "astro:transitions";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -32,7 +33,10 @@ const { Content } = await post.render();
 <Layout>
   <NavOptions />
   <section>
-    <h1>
+    <h1
+      transition:name={post.slug}
+      transition:animate={fade({ duration: "0.8s" })}
+    >
       {post.data.title}
     </h1>
     <section class="tags">

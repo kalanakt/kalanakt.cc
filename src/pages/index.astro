@@ -2,12 +2,11 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../layout/Layout.astro";
-import Link from "../components/Link.astro";
-import Card from "../components/Card.astro";
+import BlogCard from "../components/BlogCard.astro";
 import Hero from "../components/Hero.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
-const projects = await getCollection("projects", ({ data }) => !data.draft);
+// const projects = await getCollection("projects", ({ data }) => !data.draft);
 ---
 
 <Layout>
@@ -25,14 +24,14 @@ const projects = await getCollection("projects", ({ data }) => !data.draft);
           .slice(0, 6)
           .map((post) => (
             <li>
-              <Card post={post} link={`posts/${post.slug}`} />
+              <BlogCard post={post} link={`posts/${post.slug}`} />
             </li>
           ))
       }
     </ul>
   </section>
 
-  <section class="posts" id="projects">
+  <!-- <section class="posts" id="projects">
     <h2>#. Projects</h2>
     <ul>
       {
@@ -45,7 +44,7 @@ const projects = await getCollection("projects", ({ data }) => !data.draft);
           .map((project) => <Card post={project} link={project.data.url} />)
       }
     </ul>
-  </section>
+  </section> -->
 </Layout>
 
 <style>
