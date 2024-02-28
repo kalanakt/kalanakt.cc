@@ -16,16 +16,19 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/vercel": "^7.3.1",
     "astro": "^4.4.1",
-    "astro-expressive-code": "^0.33.0",
     "markdown-it": "^14.0.0",
-    "remark-math": "^6.0.0",
     "sanitize-html": "^2.11.0"
   },
   "devDependencies": {
+    "@astrojs/markdown-remark": "^4.2.1",
     "@astrojs/sitemap": "^3.1.0",
     "@rollup/plugin-yaml": "^4.1.2",
     "@types/markdown-it": "^13.0.7",
     "@types/sanitize-html": "^2.11.0",
+    "astro-expressive-code": "^0.33.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
+    "remark-mermaidjs": "^6.0.0",
     "vite": "^5.1.3"
   }
 }
