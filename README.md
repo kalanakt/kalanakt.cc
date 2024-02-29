@@ -1,4 +1,4 @@
-[![A screenshot of the kalanakt.cc website](./public/kalanaktog.jpeg 'KalanaKT's website')](https://www.kalanakt.cc)
+[![Kalana kt's Website Screenshot](public/kalanaktog.jpeg)](https://www.kalanakt.cc)
 
 ```bash
 git clone git@github.com:kalanakt/portfolio.git
