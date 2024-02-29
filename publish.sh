@@ -5,6 +5,9 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 DATETIME=$(date +"%Y-%m-%d %T")
 
+echo -e "${GREEN}Checking for changes...${NC}"
+npm run lint
+
 echo -e "${GREEN}Adding all changes to the staging area...${NC}"
 git add .
 
