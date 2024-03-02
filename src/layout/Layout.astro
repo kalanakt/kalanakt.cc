@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import TopMenuBar from "../components/TopMenuBar.astro";
+import BgLines from "../components/BgLines.astro";
 import { SITE } from "../config";
 import { ViewTransitions } from "astro:transitions";
 
@@ -58,13 +59,14 @@ const {
   </head>
   <body>
     <TopMenuBar />
+    <BgLines />
     <main>
       <slot />
     </main>
     <Footer />
     <style>
       body {
-        display: flex;
+        display: table;
         flex-direction: column;
         margin: 0 auto;
         width: 80vw;

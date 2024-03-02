@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 import Layout from "../layout/Layout.astro";
 import BlogCard from "../components/BlogCard.astro";
 import Hero from "../components/Hero.astro";
+import Contact from "../components/Contact.astro";
+import TestMonials from "../components/TestMonilas.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 // const projects = await getCollection("projects", ({ data }) => !data.draft);
@@ -12,7 +14,7 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 <Layout>
   <Hero />
   <section class="posts" id="posts">
-    <h2>#. Posts</h2>
+    <p class="pre"><span>#2</span>Tricks && Tips</p>
     <ul>
       {
         posts
@@ -28,37 +30,23 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
             </li>
           ))
       }
-      <span class="more">
-        <a href="/posts">More Posts</a>
-      </span>
     </ul>
+    <span class="more">
+      <a href="/posts">More Posts</a>
+    </span>
   </section>
-
-  <!-- <section class="posts" id="projects">
-    <h2>#. Projects</h2>
-    <ul>
-      {
-        projects
-          .sort(
-            (a, b) =>
-              Math.floor(b.data.pubDate / 1000) -
-              Math.floor(a.data.pubDate / 1000),
-          )
-          .map((project) => <Card post={project} link={project.data.url} />)
-      }
-    </ul>
-  </section> -->
+  <!-- <TestMonials /> -->
+  <Contact />
 </Layout>
 
 <style>
+  .more {
+    text-align: right;
+  }
   .description {
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-2x);
-  }
-
-  .more {
-    text-align: end;
   }
 
   .posts ul {

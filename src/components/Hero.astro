@@ -3,27 +3,20 @@ import { SITE } from "../config";
 ---
 
 <section class="hero">
-  <span class="hello">hello,</span>
+  <p class="pre"><span>#1</span>Hello</p>
   <h1>
-    I'm {SITE.author}, A problem solver, based in Sri Lanka.
+    I'm {SITE.author}
   </h1>
   <p>{SITE.description}</p>
 </section>
 
 <style>
-  .hello {
-    font-size: 1rem;
-    color: hsla(196, 61%, 58%);
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
   .hero {
-    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0.5rem;
+    padding: 10vh 0 10vh 0;
   }
 
   @media screen and (max-width: 600px) {
