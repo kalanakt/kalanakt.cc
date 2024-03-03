@@ -6,8 +6,8 @@ NC='\033[0m'
 DATETIME=$(date +"%Y-%m-%d %T")
 
 # Set default values
-GIT=true
-VERCEL=true
+GIT=false
+VERCEL=false
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
