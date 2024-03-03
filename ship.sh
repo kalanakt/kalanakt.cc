@@ -6,8 +6,9 @@ NC='\033[0m'
 DATETIME=$(date +"%Y-%m-%d %T")
 
 # Set default values
-GIT=false
-VERCEL=false
+GIT=true
+VERCEL=true
+MESSAGE=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -23,6 +24,10 @@ while [[ $# -gt 0 ]]; do
         --vercel)
             VERCEL=true
             shift
+            ;;
+        -m)
+            MESSAGE="$2"
+            shift 2
             ;;
         *)
             shift
@@ -58,8 +63,13 @@ if [ "$GIT" == true ]; then
     echo -e "${GREEN}Adding all changes to the staging area...${NC}"
     git add .
 
-    echo -e "${GREEN}Committing changes with message: Version update to ${NEW_VERSION}${NC}"
-    git commit -m "Version update to ${NEW_VERSION} [${DATETIME}]"
+    COMMIT_MESSAGE="changes in v ${NEW_VERSION}"
+    if [ -n "$MESSAGE" ]; then
+        COMMIT_MESSAGE="$MESSAGE"
+    fi
+
+    echo -e "${GREEN}Committing changes with message: $COMMIT_MESSAGE${NC}"
+    git commit -m "$COMMIT_MESSAGE"
 
     echo -e "${GREEN}Pushing changes to the remote repository...${NC}"
     git push origin main
