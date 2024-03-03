@@ -38,25 +38,25 @@ done
 # Get current version
 CURRENT_VERSION=$(node -p "require('./package.json').version")
 
-# Determine new version based on argument
-case "$VERSION_TYPE" in
-    --patch)
-        NEW_VERSION=$(npm version patch --force | sed 's/v//')
-        ;;
-    --minor)
-        NEW_VERSION=$(npm version minor --force | sed 's/v//')
-        ;;
-    --major)
-        NEW_VERSION=$(npm version major --force | sed 's/v//')
-        ;;
-    *)
-        # echo -e "${RED}Invalid version type. Please use --patch, --minor, or --major.${NC}"
-        # exit 1
-        # ;;
-esac
+# Determine new version based on argument if provided
+if [ -n "$VERSION_TYPE" ]; then
+    case "$VERSION_TYPE" in
+        --patch)
+            NEW_VERSION=$(npm version patch --force | sed 's/v//')
+            ;;
+        --minor)
+            NEW_VERSION=$(npm version minor --force | sed 's/v//')
+            ;;
+        --major)
+            NEW_VERSION=$(npm version major --force | sed 's/v//')
+            ;;
+    esac
 
-# Update version in package.json
-sed -i '' "s/${CURRENT_VERSION}/${NEW_VERSION}/" package.json
+    # Update version in package.json
+    if [ -n "$NEW_VERSION" ]; then
+        sed -i '' "s/${CURRENT_VERSION}/${NEW_VERSION}/" package.json
+    fi
+fi
 
 # Perform Git operations if enabled
 if [ "$GIT" == true ]; then
