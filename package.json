@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "astro check",
-    "ship": "./publish.sh"
+    "ship": "./ship.sh"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
