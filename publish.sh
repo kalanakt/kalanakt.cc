@@ -7,8 +7,8 @@ DATETIME=$(date +"%Y-%m-%d %T")
 
 # Set default values
 VERSION_TYPE=""
-GIT=true
-VERCEL=true
+GIT=false
+VERCEL=false
 
 # Parse arguments
 MESSAGE=""
