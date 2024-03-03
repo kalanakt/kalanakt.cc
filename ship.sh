@@ -6,12 +6,10 @@ NC='\033[0m'
 DATETIME=$(date +"%Y-%m-%d %T")
 
 # Set default values
-VERSION_TYPE=""
-GIT=false
-VERCEL=false
+GIT=true
+VERCEL=true
 
 # Parse arguments
-MESSAGE=""
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --patch|--minor|--major)
@@ -26,28 +24,42 @@ while [[ $# -gt 0 ]]; do
             VERCEL=true
             shift
             ;;
-        -m)
-            MESSAGE="$2"
-            shift 2
-            ;;
         *)
             shift
             ;;
     esac
 done
 
-# Update version in package.json if version type is provided
-if [ ! -z "$VERSION_TYPE" ]; then
-    npm version $VERSION_TYPE --force -m "$MESSAGE [${DATETIME}]"
-fi
+# Get current version
+CURRENT_VERSION=$(node -p "require('./package.json').version")
+
+# Determine new version based on argument
+case "$VERSION_TYPE" in
+    --patch)
+        NEW_VERSION=$(npm version patch --force | sed 's/v//')
+        ;;
+    --minor)
+        NEW_VERSION=$(npm version minor --force | sed 's/v//')
+        ;;
+    --major)
+        NEW_VERSION=$(npm version major --force | sed 's/v//')
+        ;;
+    *)
+        echo -e "${RED}Invalid version type. Please use --patch, --minor, or --major.${NC}"
+        exit 1
+        ;;
+esac
+
+# Update version in package.json
+sed -i '' "s/${CURRENT_VERSION}/${NEW_VERSION}/" package.json
 
 # Perform Git operations if enabled
 if [ "$GIT" == true ]; then
     echo -e "${GREEN}Adding all changes to the staging area...${NC}"
     git add .
 
-    echo -e "${GREEN}Committing changes with message: $MESSAGE${NC}"
-    git commit -m "$MESSAGE [${DATETIME}]"
+    echo -e "${GREEN}Committing changes with message: Version update to ${NEW_VERSION}${NC}"
+    git commit -m "Version update to ${NEW_VERSION} [${DATETIME}]"
 
     echo -e "${GREEN}Pushing changes to the remote repository...${NC}"
     git push origin main
