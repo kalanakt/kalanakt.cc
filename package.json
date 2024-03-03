@@ -1,7 +1,7 @@
 {
   "name": "kalanakt.cc",
   "type": "module",
-  "version": "0.0.5",
+  "version": "",
   "private": true,
   "scripts": {
     "dev": "astro dev --host",

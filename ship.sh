@@ -50,9 +50,9 @@ case "$VERSION_TYPE" in
         NEW_VERSION=$(npm version major --force | sed 's/v//')
         ;;
     *)
-        echo -e "${RED}Invalid version type. Please use --patch, --minor, or --major.${NC}"
-        exit 1
-        ;;
+        # echo -e "${RED}Invalid version type. Please use --patch, --minor, or --major.${NC}"
+        # exit 1
+        # ;;
 esac
 
 # Update version in package.json
@@ -65,7 +65,7 @@ if [ "$GIT" == true ]; then
 
     COMMIT_MESSAGE="changes in v ${NEW_VERSION}"
     if [ -n "$MESSAGE" ]; then
-        COMMIT_MESSAGE="$MESSAGE"
+        COMMIT_MESSAGE="$MESSAGE : [$DATETIME]"
     fi
 
     echo -e "${GREEN}Committing changes with message: $COMMIT_MESSAGE${NC}"
