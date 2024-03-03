@@ -1,27 +1,21 @@
 ---
-import { getCollection } from "astro:content";
-
-
 const reviewss = [
   {
     text: "",
-    author: ""
-  }
-]
+    author: "",
+  },
+];
 ---
 
 <section id="reviews" class="reviewss">
   <p class="pre"><span>#2</span>What My Clients Says</p>
   <ul class="reviews">
     {
-      reviews.map((review) => (
+      reviewss.map((review) => (
         <li>
           <div class="testimonial-card">
-            <p class="testimonial-text">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              hendrerit eros nec nisi consequat, a hendrerit dui ultrices."
-            </p>
-            <p class="testimonial-author">- John Doe</p>
+            <p class="testimonial-text">{review.text}</p>
+            <p class="testimonial-author">- {review.author}</p>
           </div>
         </li>
       ))
