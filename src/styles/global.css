@@ -7,10 +7,10 @@
   --font-size-xl: 2rem;
   --font-size-2xl: 2.5rem;
 
-  --spacing: 8px;
-  --spacing-2x: 16px;
-  --spacing-4x: 32px;
-  --spacing-8x: 64px;
+  --spacing: 0.5rem;
+  --spacing-2x: 1rem;
+  --spacing-4x: 1.5rem;
+  --spacing-8x: 2rem;
 }
 
 *,

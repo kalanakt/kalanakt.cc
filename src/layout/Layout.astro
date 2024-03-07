@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
-import MobileMenu from "../components/MobileMenu.astro";
 import TopMenuBar from "../components/TopMenuBar.astro";
 import BgLines from "../components/BgLines.astro";
 import { SITE } from "../config";
@@ -70,9 +69,8 @@ const {
         display: table;
         flex-direction: column;
         margin: 0 auto;
-        width: 80vw;
-        padding-top: var(--spacing-2x);
-        padding-bottom: var(--spacing-2x);
+        padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x)
+          var(--spacing-2x);
         font-family: "Outfit", "Trebuchet MS", "Lucida Sans Unicode",
           "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         font-optical-sizing: auto;
