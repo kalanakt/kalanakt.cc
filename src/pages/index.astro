@@ -5,6 +5,7 @@ import Layout from "../layout/Layout.astro";
 import BlogCard from "../components/BlogCard.astro";
 import Hero from "../components/Hero.astro";
 import Contact from "../components/Contact.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 // import TestMonials from "../components/TestMonilas.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -21,7 +22,7 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
           .sort(
             (a, b) =>
               Math.floor(b.data.pubDate / 1000) -
-              Math.floor(a.data.pubDate / 1000),
+              Math.floor(a.data.pubDate / 1000)
           )
           .slice(0, 3)
           .map((post) => (
@@ -37,6 +38,7 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
   </section>
   <!-- <TestMonials /> -->
   <Contact />
+  <MobileMenu />
 </Layout>
 
 <style>
