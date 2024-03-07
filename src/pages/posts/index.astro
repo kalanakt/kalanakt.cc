@@ -2,23 +2,21 @@
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 import Layout from "../../layout/Layout.astro";
-import { SITE } from "../../config";
 import NavOptions from "../../components/NavOptions.astro";
 import Card from "../../components/BlogCard.astro";
 ---
 
 <Layout>
   <NavOptions />
-  <h1>Discover {SITE.author}'s Posts.</h1>
+  <h1>#. Posts</h1>
   <section class="posts">
-    <h2>#. Posts</h2>
     <ul>
       {
         posts
           .sort(
             (a, b) =>
               Math.floor(b.data.pubDate / 1000) -
-              Math.floor(a.data.pubDate / 1000),
+              Math.floor(a.data.pubDate / 1000)
           )
           .map((post) => (
             <li>

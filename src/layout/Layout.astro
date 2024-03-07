@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 import TopMenuBar from "../components/TopMenuBar.astro";
 import BgLines from "../components/BgLines.astro";
 import { SITE } from "../config";
@@ -64,6 +65,7 @@ const {
       <slot />
     </main>
     <Footer />
+    <MobileMenu />
     <style>
       body {
         display: table;
@@ -90,6 +92,7 @@ const {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-4x);
+        min-height: 90vh;
       }
 
       @media screen and (min-width: 769px) {
