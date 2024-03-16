@@ -4,6 +4,7 @@
   --font-size-2sm: 0.625rem;
   --font-size-sm: 0.75rem;
   --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
   --font-size-xl: 2rem;
   --font-size-2xl: 2.5rem;
 
@@ -46,6 +47,11 @@ h3 {
   font-size: var(--font-size-lg);
 }
 
+h4 {
+  font-weight: 400;
+  font-size: var(--font-size-md);
+}
+
 p,
 li {
   font-size: var(--font-size-md);
@@ -85,6 +91,11 @@ a::before {
 a:hover::before {
   bottom: 0;
   height: 100%;
+}
+
+code {
+  background-color: #2d2e33;
+  border-radius: 0.2rem;
 }
 
 .pre {
