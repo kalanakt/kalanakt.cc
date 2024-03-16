@@ -81,5 +81,99 @@ graph LR
     G --> Gg(Numbers without the decimal part)
     H --> Hh(Numbers with the decimal part)
     D --> Dd(True or false)
+    C --> Cc(Sequence of elements of the same type)
+    F --> Ff(Key-value pairs)
     end
+```
+
+## Kinds of data in golang
+
+### Strings
+
+Strings are a sequence of characters enclosed in double quotes. They are immutable, meaning that once a string is created, it cannot be changed. You can concatenate strings using the `+` operator.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var name string = "John"
+    fmt.Println("Hello, " + name)
+}
+```
+
+### Numbers
+
+Numbers in Go can be of two types: integers and floats. Integers are whole numbers, while floats have a decimal part. You can perform arithmetic operations on numbers, such as addition, subtraction, multiplication, and division.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var age int = 30
+    var weight float64 = 65.5
+    fmt.Println("Age:", age)
+    fmt.Println("Weight:", weight)
+}
+```
+
+**Int Data Type and Memory Allocation**
+
+| Type  | Description           | Memory Allocation |
+| ----- | --------------------- | ----------------- |
+| int8  | 8-bit signed integer  | 1 byte            |
+| int16 | 16-bit signed integer | 2 bytes           |
+| int32 | 32-bit signed integer | 4 bytes           |
+| int64 | 64-bit signed integer | 8 bytes           |
+| int   | Platform-specific     | Platform-specific |
+
+<br />
+
+**Float Data Type and Memory Allocation**
+
+| Type    | Description                  | Memory Allocation |
+| ------- | ---------------------------- | ----------------- |
+| float32 | 32-bit floating-point number | 4 bytes           |
+| float64 | 64-bit floating-point number | 8 bytes           |
+| float   | Platform-specific            | Platform-specific |
+
+### Arrays and Slices
+
+Arrays and slices are used to store a sequence of elements of the same type. The main difference between them is that arrays have a fixed size, while slices are dynamic and can grow or shrink.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // Array
+    var numbers [3]int
+    numbers[0] = 10
+    numbers[1] = 20
+    numbers[2] = 30
+    fmt.Println("Numbers:", numbers)
+
+    // Slice
+    var fruits = []string{"apple", "banana", "orange"}
+    fmt.Println("Fruits:", fruits)
+}
+```
+
+### Boolean
+
+Boolean data types represent true or false values. They are often used in conditional statements and loops to control the flow of a program.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var isStudent bool = true
+    fmt.Println("Is student:", isStudent)
+}
 ```
