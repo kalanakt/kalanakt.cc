@@ -14,7 +14,7 @@ import astroExpressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://kalanakt.vercel.app",
+  site: "https://www.kalanakt.cc",
   integrations: [astroExpressiveCode(), mdx(), sitemap()],
   output: "static",
   adapter: vercel(),
