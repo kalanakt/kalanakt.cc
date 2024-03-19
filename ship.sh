@@ -73,6 +73,14 @@ if [ "$GIT" == true ]; then
 
     echo -e "${GREEN}Pushing changes to the remote repository...${NC}"
     git push origin main
+
+
+    # Create a tag and push it to the remote repository
+    if [ -n "$NEW_VERSION" ]; then
+        echo -e "${GREEN}Creating GitHub tag for version ${NEW_VERSION}...${NC}"
+        git tag -a "v${NEW_VERSION}" -m "Version ${NEW_VERSION}"
+        git push origin "v${NEW_VERSION}"
+    fi
 fi
 
 # Perform Vercel deployment if enabled
