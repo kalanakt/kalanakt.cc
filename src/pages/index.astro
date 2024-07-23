@@ -9,8 +9,6 @@ import MobileMenu from "../components/MobileMenu.astro";
 // import TestMonials from "../components/TestMonilas.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
-// const projects = await getCollection("projects", ({ data }) => !data.draft);
-console.log(posts[2]);
 ---
 
 <Layout>
