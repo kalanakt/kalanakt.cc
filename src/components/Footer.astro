@@ -3,75 +3,75 @@ import { GITHUB_REPO_URL, LINKEDIN_URL } from "../config";
 import Link from "./Link.astro";
 
 const navLinks = [
-  {
-    title: "Posts",
-    href: "/posts",
-    isExternal: false,
-  },
-  {
-    title: "Tags",
-    href: "/tags",
-    isExternal: false,
-  },
-  {
-    title: "GitHub",
-    href: GITHUB_REPO_URL,
-    isExternal: true,
-  },
-  {
-    title: "LinkedIn",
-    href: LINKEDIN_URL,
-    isExternal: true,
-  },
-  {
-    title: "RSS",
-    href: "rss.xml",
-    isExternal: true,
-  },
+    {
+        title: "Posts",
+        href: "/posts/1",
+        isExternal: false,
+    },
+    {
+        title: "Tags",
+        href: "/tags",
+        isExternal: false,
+    },
+    {
+        title: "GitHub",
+        href: GITHUB_REPO_URL,
+        isExternal: true,
+    },
+    {
+        title: "LinkedIn",
+        href: LINKEDIN_URL,
+        isExternal: true,
+    },
+    {
+        title: "RSS",
+        href: "rss.xml",
+        isExternal: true,
+    },
 ];
 ---
 
 <footer>
-  <p>
-    &copy; Copyright {new Date().getUTCFullYear()} Kalanakt 🤍
-  </p>
-  <nav>
-    <ul>
-      {
-        navLinks.map((link) => (
-          <li>
-            <p>
-              <Link href={link.href} isExternal={link.isExternal}>
-                {link.title}
-              </Link>
-            </p>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <p>
+        &copy; Copyright {new Date().getUTCFullYear()} Kalanakt 🤍
+    </p>
+    <nav>
+        <ul>
+            {
+                navLinks.map((link) => (
+                    <li>
+                        <p>
+                            <Link href={link.href} isExternal={link.isExternal}>
+                                {link.title}
+                            </Link>
+                        </p>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
 </footer>
 
 <style>
-  footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-top: var(--spacing-4x);
-    padding-top: var(--spacing);
-  }
-
-  footer nav ul {
-    display: flex;
-    gap: var(--spacing-2x);
-  }
-
-  @media screen and (max-width: 600px) {
     footer {
-      flex-direction: column-reverse;
-      gap: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: var(--spacing-4x);
+        padding-top: var(--spacing);
     }
-  }
+
+    footer nav ul {
+        display: flex;
+        gap: var(--spacing-2x);
+    }
+
+    @media screen and (max-width: 600px) {
+        footer {
+            flex-direction: column-reverse;
+            gap: 8px;
+        }
+    }
 </style>

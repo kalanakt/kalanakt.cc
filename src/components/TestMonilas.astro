@@ -1,65 +1,65 @@
 ---
 const reviewss = [
-  {
-    text: "",
-    author: "",
-  },
+    {
+        text: "",
+        author: "",
+    },
 ];
 ---
 
 <section id="reviews" class="reviewss">
-  <p class="pre"><span>#2</span>What My Clients Says</p>
-  <ul class="reviews">
-    {
-      reviewss.map((review) => (
-        <li>
-          <div class="testimonial-card">
-            <p class="testimonial-text">{review.text}</p>
-            <p class="testimonial-author">- {review.author}</p>
-          </div>
-        </li>
-      ))
-    }
-  </ul>
+    <p class="pre"><span>#2</span>What My Clients Says</p>
+    <ul class="reviews">
+        {
+            reviewss.map((review) => (
+                <li>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">{review.text}</p>
+                        <p class="testimonial-author">- {review.author}</p>
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
 
-  <span class="more">
-    <a href="/posts">More Posts</a>
-  </span>
+    <span class="more">
+        <a href="/posts/1">More Posts</a>
+    </span>
 
-  <style>
-    .reviewss {
-      padding: 10vh 0 0 0;
-    }
+    <style>
+        .reviewss {
+            padding: 10vh 0 0 0;
+        }
 
-    .reviews {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 2vh 0 2vh 0;
-    }
+        .reviews {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 2vh 0 2vh 0;
+        }
 
-    .testimonial-card {
-      position: relative;
-      max-width: 15vw;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 5px hsla(196, 61%, 58%, 0.25);
-    }
+        .testimonial-card {
+            position: relative;
+            max-width: 15vw;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px hsla(196, 61%, 58%, 0.25);
+        }
 
-    .testimonial-text {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #333;
-      margin-bottom: 10px;
-    }
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-    .testimonial-author {
-      font-size: 12px;
-      font-style: italic;
-      color: #666;
-      text-align: right;
-    }
-  </style>
+        .testimonial-author {
+            font-size: 12px;
+            font-style: italic;
+            color: #666;
+            text-align: right;
+        }
+    </style>
 </section>
