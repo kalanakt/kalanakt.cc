@@ -10,70 +10,71 @@ import MobileMenu from "../components/MobileMenu.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 // const projects = await getCollection("projects", ({ data }) => !data.draft);
+console.log(posts[2]);
 ---
 
 <Layout>
-  <Hero />
-  <section class="posts" id="posts">
-    <p class="pre"><span>#2</span>Tricks && Tips</p>
-    <ul>
-      {
-        posts
-          .sort(
-            (a, b) =>
-              Math.floor(b.data.pubDate / 1000) -
-              Math.floor(a.data.pubDate / 1000)
-          )
-          .slice(0, 3)
-          .map((post) => (
-            <li>
-              <BlogCard post={post} link={`posts/${post.slug}`} />
-            </li>
-          ))
-      }
-    </ul>
-    <span class="more">
-      <a href="/posts">More Posts</a>
-    </span>
-  </section>
-  <!-- <TestMonials /> -->
-  <Contact />
-  <MobileMenu />
+    <Hero />
+    <section class="posts" id="posts">
+        <p class="pre"><span>#2</span>Tricks && Tips</p>
+        <ul>
+            {
+                posts
+                    .sort(
+                        (a, b) =>
+                            Math.floor(b.data.pubDate / 1000) -
+                            Math.floor(a.data.pubDate / 1000),
+                    )
+                    .slice(0, 3)
+                    .map((post) => (
+                        <li>
+                            <BlogCard post={post} link={`posts/${post.slug}`} />
+                        </li>
+                    ))
+            }
+        </ul>
+        <span class="more">
+            <a href="/posts">More Posts</a>
+        </span>
+    </section>
+    <!-- <TestMonials /> -->
+    <Contact />
+    <MobileMenu />
 </Layout>
 
 <style>
-  .more {
-    text-align: right;
-  }
-  .description {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--spacing-2x);
-  }
-  .posts ul {
-    padding-top: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
-  }
-
-  .posts ul li {
-    display: flex;
-    justify-content: space-between;
-    column-gap: var(--spacing-8x);
-  }
-
-  .posts :global(a) {
-    flex: 1;
-  }
-
-  @media screen and (max-width: 600px) {
-    .posts ul li {
-      flex-direction: column;
+    .more {
+        text-align: right;
     }
-
+    .description {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-2x);
+    }
     .posts ul {
-      gap: var(--spacing-2x);
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing);
     }
-  }
+
+    .posts ul li {
+        display: flex;
+        justify-content: space-between;
+        column-gap: var(--spacing-8x);
+    }
+
+    .posts :global(a) {
+        flex: 1;
+    }
+
+    @media screen and (max-width: 600px) {
+        .posts ul li {
+            flex-direction: column;
+        }
+
+        .posts ul {
+            gap: var(--spacing-2x);
+        }
+    }
 </style>

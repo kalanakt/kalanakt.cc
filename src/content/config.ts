@@ -1,13 +1,15 @@
-import { defineCollection, z } from 'astro:content';
-import { rssSchema } from '@astrojs/rss';
+import { defineCollection, z } from "astro:content";
+import { rssSchema } from "@astrojs/rss";
 
 const blogCollection = defineCollection({
   schema: z
     .object({
       tags: z.optional(z.array(z.string())),
-      url: z.optional(z.string())
+      url: z.optional(z.string()),
+      pubDate: z.optional(z.date()),
+      title: z.optional(z.string()),
     })
-    .merge(rssSchema)
+    .merge(rssSchema),
 });
 
 const projectsCollection = defineCollection({
@@ -15,10 +17,10 @@ const projectsCollection = defineCollection({
     .object({
       tags: z.optional(z.array(z.string())),
     })
-    .merge(rssSchema)
+    .merge(rssSchema),
 });
 
 export const collection = {
   blog: blogCollection,
-  projects: projectsCollection
-}
+  projects: projectsCollection,
+};

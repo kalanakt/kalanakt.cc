@@ -1,121 +1,123 @@
 :root {
-  --color-primary: rgba(0, 0, 0, 0);
+    --color-primary: rgba(0, 0, 0, 0);
 
-  --font-size-2sm: 0.625rem;
-  --font-size-sm: 0.75rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.5rem;
-  --font-size-xl: 2rem;
-  --font-size-2xl: 2.5rem;
+    --font-size-2sm: 0.625rem;
+    --font-size-sm: 0.75rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 2.5rem;
 
-  --spacing: 0.5rem;
-  --spacing-2x: 1rem;
-  --spacing-4x: 1.5rem;
-  --spacing-8x: 2rem;
+    --spacing: 0.5rem;
+    --spacing-2x: 1rem;
+    --spacing-4x: 1.5rem;
+    --spacing-8x: 2rem;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 html,
 body {
-  font-family: "Roboto Mono";
-  min-height: 100vh;
-  font-size: 100%;
-  list-style-type: none;
-  display: flex;
+    font-family: "Roboto Mono";
+    min-height: 100vh;
+    font-size: 100%;
+    list-style-type: none;
+    display: flex;
 }
 
 h1 {
-  font-weight: 500;
-  font-size: var(--font-size-2xl);
+    font-weight: 500;
+    font-size: var(--font-size-2xl);
 }
 
 h2 {
-  font-weight: 400;
-  font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-size: var(--font-size-xl);
 }
 
 h3 {
-  font-weight: 400;
-  font-size: var(--font-size-lg);
+    font-weight: 400;
+    font-size: var(--font-size-lg);
 }
 
 h4 {
-  font-weight: 400;
-  font-size: var(--font-size-md);
+    font-weight: 400;
+    font-size: var(--font-size-md);
 }
 
 p,
 li {
-  font-size: var(--font-size-md);
-  text-align: justify;
-  text-justify: inter-word;
+    font-size: var(--font-size-md);
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 li,
 ul {
-  list-style-type: none;
+    list-style-type: none;
+    margin: 0.5rem 0 0 0.5rem;
 }
 
 hr {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-color: #2d2e33;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: #2d2e33;
 }
 
 a {
-  text-decoration: none;
-  color: #18272f;
-  position: relative;
+    text-decoration: none;
+    color: #18272f;
+    position: relative;
 }
 
 a::before {
-  content: "";
-  background-color: hsla(196, 61%, 58%, 0.75);
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  width: 100%;
-  height: 4px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
+    content: "";
+    background-color: hsla(196, 61%, 58%, 0.75);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 4px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
 }
 
 a:hover::before {
-  bottom: 0;
-  height: 100%;
+    bottom: 0;
+    height: 100%;
 }
 
 code {
-  background-color: #2d2e33;
-  border-radius: 0.2rem;
+    background-color: #2d2e33;
+    opacity: 0.4;
+    border-radius: 0.3rem;
 }
 
 .pre {
-  display: inline-block;
-  font-size: 12px;
-  margin: 0;
-  opacity: 0.8;
-  letter-spacing: 1.4px;
-  word-spacing: 0.2rem;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  color: inherit;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.8;
+    letter-spacing: 1.4px;
+    word-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    color: inherit;
 }
 
 .pre span {
-  font-size: 0.9em;
-  margin-right: 0.4em;
-  opacity: 0.5;
+    font-size: 0.9em;
+    margin-right: 0.4em;
+    opacity: 0.5;
 }
 
 .pre:hover {
-  opacity: 1;
+    opacity: 1;
 }
