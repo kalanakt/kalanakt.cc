@@ -7,103 +7,105 @@ import NavOptions from "../../components/NavOptions.astro";
 import Card from "../../components/BlogCard.astro";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-    const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
 
-    return paginate(posts, { pageSize: 5 });
+  return paginate(posts, { pageSize: 5 });
 };
 
-const page: Page<CollectionEntry<"blog">> = Astro.props.page;
+const page: Page<CollectionEntry<"blog">> = Astro.props.page as Page<
+  CollectionEntry<"blog">
+>;
 ---
 
 <Layout>
-    <NavOptions />
-    <section class="posts">
-        <ul>
-            {
-                page.data
-                    .sort(
-                        (a, b) =>
-                            Math.floor(b.data.pubDate / 1000) -
-                            Math.floor(a.data.pubDate / 1000),
-                    )
-                    .map((post) => (
-                        <li>
-                            <Card post={post} link={`/posts/${post.slug}`} />
-                        </li>
-                    ))
-            }
-        </ul>
-        <div class="pagination">
-            <ul>
-                {
-                    page.url.prev && (
-                        <li>
-                            <a href={page.url.prev}> Previous Page</a>
-                        </li>
-                    )
-                }
-                <li class="cpage">{page.currentPage}</li>
-                {
-                    page.url.next && (
-                        <li>
-                            <a href={page.url.next}>Next Page</a>
-                        </li>
-                    )
-                }
-            </ul>
-        </div>
-    </section>
+  <NavOptions />
+  <section class="posts">
+    <ul>
+      {
+        page.data
+          .sort(
+            (a, b) =>
+              Math.floor(b.data.pubDate / 1000) -
+              Math.floor(a.data.pubDate / 1000)
+          )
+          .map((post) => (
+            <li>
+              <Card post={post} link={`/posts/${post.slug}`} />
+            </li>
+          ))
+      }
+    </ul>
+    <div class="pagination">
+      <ul>
+        {
+          page.url.prev && (
+            <li>
+              <a href={page.url.prev}> Previous Page</a>
+            </li>
+          )
+        }
+        <li class="cpage">{page.currentPage}</li>
+        {
+          page.url.next && (
+            <li>
+              <a href={page.url.next}>Next Page</a>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+  </section>
 </Layout>
 
 <style>
-    .description {
-        display: flex;
-        flex-direction: column;
-        row-gap: var(--spacing-2x);
+  .description {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-2x);
+  }
+
+  .posts ul {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  .posts ul li {
+    display: flex;
+    justify-content: space-between;
+    column-gap: var(--spacing-8x);
+  }
+
+  .posts {
+    flex: 1;
+    padding-top: 5vh;
+    width: 100%;
+  }
+
+  .pagination ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: var(--spacing-2x);
+    padding-top: var(--spacing-8x);
+  }
+
+  .cpage {
+    padding: 0 var(--spacing-2x);
+    font-weight: bold;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: var(--color-primary);
+  }
+
+  @media screen and (max-width: 600px) {
+    .posts ul li {
+      flex-direction: column;
     }
 
     .posts ul {
-        padding-top: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing);
+      gap: var(--spacing-2x);
     }
-
-    .posts ul li {
-        display: flex;
-        justify-content: space-between;
-        column-gap: var(--spacing-8x);
-    }
-
-    .posts {
-        flex: 1;
-        padding-top: 5vh;
-        width: 100%;
-    }
-
-    .pagination ul {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        gap: var(--spacing-2x);
-        padding-top: var(--spacing-8x);
-    }
-
-    .cpage {
-        padding: 0 var(--spacing-2x);
-        font-weight: bold;
-        border: 1px solid var(--color-primary);
-        border-radius: 5px;
-        background-color: var(--color-primary);
-    }
-
-    @media screen and (max-width: 600px) {
-        .posts ul li {
-            flex-direction: column;
-        }
-
-        .posts ul {
-            gap: var(--spacing-2x);
-        }
-    }
+  }
 </style>
