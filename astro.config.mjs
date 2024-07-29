@@ -31,4 +31,8 @@ export default defineConfig({
       theme: "github-dark",
     },
   },
+  redirects: {
+    "/blog": "/posts/1",
+    "/posts/": "/posts/1",
+  },
 });

@@ -1,0 +1,123 @@
+<!-- <astro-heart>
+  <button class="btn">
+    <div class="content">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon"
+      >
+        <path
+          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+        >
+        </path>
+      </svg>
+      <span class="text">cherish moments</span>
+      <span>x</span>
+      <span id="count">0</span>
+    </div>
+  </button>
+</astro-heart>
+-->
+<astro-heart>
+  <button class="btn">
+    <div class="content">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon"
+      >
+        <path
+          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+        >
+        </path>
+      </svg>
+      <span class="text-sm text-gray-300 font-mono">cherish moments</span>
+      <span>x</span>
+      <span id="count">0</span>
+    </div>
+  </button>
+</astro-heart>
+
+<script>
+  class AstroHeart extends HTMLElement {
+    constructor() {
+      super();
+      let count = 0;
+      let intervalId;
+
+      const heartButton = this.querySelector("button");
+      const countSpan = this.querySelector("span#count");
+
+      heartButton?.addEventListener("click", () => {
+        count = 0;
+        if (countSpan) {
+          countSpan.textContent = count.toString();
+        }
+      });
+
+      intervalId = setInterval(() => {
+        count++;
+        if (countSpan) {
+          countSpan.textContent = count.toString();
+        }
+      }, 1000);
+    }
+  }
+
+  customElements.define("astro-heart", AstroHeart);
+</script>
+
+<style>
+  .btn {
+    width: fit-content;
+    border-radius: 0.375rem;
+    border: 0.5px solid #3f3f3f;
+    transition: color 0.3s;
+    outline: none;
+    box-shadow: none;
+    opacity: 0.5;
+    margin-top: 1.2rem;
+  }
+
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    color: #f97316; /* orange-500 */
+  }
+
+  .text {
+    font-size: 0.875rem; /* text-sm */
+    color: black; /* gray-300 */
+  }
+</style>
