@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "4.3.1",
+  "name": "portfolio",
+  "version": "1.2.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,7 +10,8 @@
     "astro": "astro",
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "preinstall": "npx playwright install"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.1",
@@ -37,6 +38,7 @@
     "astro-eslint-parser": "^0.16.2",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.3",
+    "playwright": "^1.45.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
