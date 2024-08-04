@@ -11,7 +11,8 @@
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "lint": "eslint .",
-    "preinstall": "pnpm exec playwright install-deps"
+    "preinstall": "pnpm exec playwright install-deps",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh"
   },
   "packageManager": "pnpm@9.6.0",
   "dependencies": {

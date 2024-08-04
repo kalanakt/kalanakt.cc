@@ -42,8 +42,8 @@ Here’s a comprehensive list of must-know commands and shortcuts for both Windo
 
 ### 4. Open New Terminal
 
-- **Windows**: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
-- **Mac**: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
+- **Windows**: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>(backtick)</kbd>
+- **Mac**: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>(backtick)</kbd>
 - **Description**: Open a new integrated terminal window within VS Code to run commands without leaving the editor.
 
 ### 5. Move Lines of Code

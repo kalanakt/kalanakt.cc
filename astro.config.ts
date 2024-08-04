@@ -12,28 +12,39 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), react(), sitemap()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    react(),
+    sitemap(),
+  ],
   markdown: {
-    remarkPlugins: [remarkToc, remarkMermaid, [remarkCollapse, {
-      test: "Table of contents"
-    }]],
+    remarkPlugins: [
+      remarkToc,
+      remarkMermaid,
+      [
+        remarkCollapse,
+        {
+          test: "Table of contents",
+        },
+      ],
+    ],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: {
         light: "min-light",
-        dark: "night-owl"
+        dark: "night-owl",
       },
-      wrap: true
-    }
+      wrap: true,
+    },
   },
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
+      exclude: ["@resvg/resvg-js"],
+    },
   },
   scopedStyleStrategy: "where",
   output: "server",
-  adapter: vercel()
+  adapter: vercel({ isr: true }),
 });
