@@ -1,26 +1,20 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import sanitizeHtml from 'sanitize-html';
-import MarkdownIt from 'markdown-it';
+import getSortedPosts from "@utils/getSortedPosts";
+import { SITE } from "@config";
 
-import { SITE } from "../config";
-
-const parser = new MarkdownIt();
-
-export async function  GET(context: { site: any; }) {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
-
+export async function GET() {
+  const posts = await getCollection("blog");
+  const sortedPosts = getSortedPosts(posts);
   return rss({
     title: SITE.title,
-    description: SITE.description,
-    site: SITE.website || context.site,
-    items: posts.map(({ data, slug, body }) => ({
-      link: slug,
+    description: SITE.desc,
+    site: SITE.website,
+    items: sortedPosts.map(({ data, slug }) => ({
+      link: `posts/${slug}/`,
       title: data.title,
       description: data.description,
-      pubDate: data.pubDate,
-      content: sanitizeHtml(parser.render(body))
+      pubDate: new Date(data.modDatetime ?? data.pubDatetime),
     })),
-    stylesheet: 'styles.xsl'
   });
 }

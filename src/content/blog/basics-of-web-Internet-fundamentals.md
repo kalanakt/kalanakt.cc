@@ -1,33 +1,34 @@
 ---
+author: KalanaKt
+pubDatetime: 2024-02-28T12:22:00Z
+modDatetime: 2024-09-04T15:30:00Z
 title: Basics of web - Internet fundamentals
-pubDate: 2024-02-28
+slug: basics-of-web-Internet-fundamentals
+featured: false
+draft: false
 tags:
   - web
+  - internet
+description: Learn the basics of the web and the Internet.
 ---
 
 In today's digital age, understanding how the internet works is crucial for navigating the online world effectively. Whether you're a student, a professional, or simply a curious individual, this post aims to shed light on the foundational elements that make the internet such a powerful tool.
-
 
 ## The History of the Internet
 
 The internet as we know it today has its roots in the 1960s, when the United States Department of Defense developed ARPANET, a pioneering network that laid the foundation for the modern internet. Over the decades, the internet has evolved into a global network of interconnected devices, enabling instant communication and access to information worldwide.
 
-
 ## How Data is Transmitted Across the Web
 
 At its core, the internet is a vast network of computers that communicate with each other using a common language known as the Internet Protocol (IP). When you request a web page or send an email, data is broken down into packets and transmitted across the internet via a series of routers and servers until it reaches its destination.
-
 
 ## The Importance of Protocols like HTTP and HTTPS
 
 HTTP (Hypertext Transfer Protocol) and its secure counterpart, HTTPS, are protocols that govern how information is transmitted between web servers and clients. HTTP defines how web browsers and servers communicate, while HTTPS adds a layer of encryption to protect sensitive data.
 
-
 ## What's DNS ?
 
 DNS stands for Domain Name System. It is a decentralized naming system for computers, services, or any resource connected to the Internet or a private network. It translates easily memorizable domain names (like example.com) to the numerical IP addresses (like 192.0.2.1) needed for locating and identifying computer services and devices with the underlying network protocols. DNS also specifies the structure of the domain names hierarchy and provides distributed, fault-tolerant, and reliable mechanisms for domain name resolution.
-
-
 
 ```mermaid
 sequenceDiagram
@@ -46,20 +47,24 @@ sequenceDiagram
 HTTP status codes are three-digit numbers returned by a web server in response to a client's request made to the server. They convey information about the status of the request and help troubleshoot potential issues. Here are some common HTTP status codes:
 
 1. **1xx - Informational:**
+
    - 100 Continue: The server has received the initial part of the request and is awaiting the rest.
    - 101 Switching Protocols: The server is changing protocols per the client's request.
 
 2. **2xx - Success:**
+
    - 200 OK: The request was successful.
    - 201 Created: The request has been fulfilled, resulting in the creation of a new resource.
    - 204 No Content: The server successfully processed the request but is not returning any content.
 
 3. **3xx - Redirection:**
+
    - 301 Moved Permanently: The requested resource has been permanently moved to a new URL.
    - 302 Found: The requested resource has been temporarily moved to a different URL.
    - 304 Not Modified: The resource has not been modified since the last request.
 
 4. **4xx - Client Error:**
+
    - 400 Bad Request: The server cannot process the request due to a client error.
    - 401 Unauthorized: The request requires user authentication.
    - 403 Forbidden: The server understood the request but refuses to authorize it.
@@ -72,7 +77,6 @@ HTTP status codes are three-digit numbers returned by a web server in response t
 Check [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for more information on HTTP status codes.
 
 These status codes provide valuable information to both clients and developers, aiding in troubleshooting and improving the web browsing experience.
-
 
 ## Port Number
 
@@ -87,7 +91,6 @@ Port numbers are divided into three ranges:
 3. **Dynamic or private ports (49152-65535):** These can be used by any application and are often assigned dynamically by the operating system.
 
 When a client wants to communicate with a server, it includes the port number along with the server's IP address to ensure that the data reaches the correct application on the server.
-
 
 ## HTTP Request Methods
 
@@ -108,7 +111,6 @@ HTTP (Hypertext Transfer Protocol) defines several request methods to indicate t
 7. **OPTIONS:** Returns the HTTP methods that the server supports for the specified URL. This can be used to check the capabilities of a server.
 
 These HTTP request methods allow clients to interact with web servers in a variety of ways, enabling the creation of dynamic and interactive web applications.
-
 
 ## HTTP Request Headers
 
@@ -137,7 +139,6 @@ HTTP request headers are key-value pairs sent by a client to a server to provide
 11. **Connection:** Specifies whether the client would like to keep the connection open for further requests.
 
 These headers provide important information to the server and can influence how the server handles the request and generates the response.
-
 
 **Conclusion:**
 In conclusion, the internet is a complex and ever-evolving network that has revolutionized the way we communicate, work, and access information. By understanding the basics of web and internet fundamentals, you can navigate this digital landscape with confidence and make the most of its vast resources.

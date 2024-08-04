@@ -1,5 +1,6 @@
 # build output
 dist/
+.output/
 
 # dependencies
 node_modules/
@@ -18,7 +19,14 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# ignore .astro
-.astro/
-.vercel
-.vscode
+# ignore .astro directory
+.astro
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
