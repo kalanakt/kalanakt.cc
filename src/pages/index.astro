@@ -9,7 +9,6 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
-import Badges from "@components/Badges.astro";
 
 const posts = await getCollection("blog");
 
@@ -66,7 +65,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           </div>
         )
       }
-      <Badges />
     </section>
 
     <Hr />

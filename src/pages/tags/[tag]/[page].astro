@@ -39,6 +39,8 @@ const pagination = getPagination({
   posts: postsByTag,
   page,
 });
+
+export const prerender = true;
 ---
 
 <TagPosts {...pagination} {tag} {tagName} />
