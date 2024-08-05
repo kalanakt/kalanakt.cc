@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - mainx
 
 jobs:
   build:
     name: Code standards & build
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     timeout-minutes: 3
 
     strategy:
