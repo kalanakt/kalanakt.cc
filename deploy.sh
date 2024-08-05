@@ -4,9 +4,9 @@
 pnpm exec playwright install-deps
 
 # Build the project using Vercel
-vercel build
+vercel build --prod
 
 # Deploy the prebuilt project using Vercel
-vercel deploy --prebuilt
+vercel deploy --prebuilt --prod
 
 echo "Build and deployment completed. Please move to production in the Vercel dashboard."
