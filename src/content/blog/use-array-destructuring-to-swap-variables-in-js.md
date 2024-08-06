@@ -1,5 +1,5 @@
 ---
-author: KalanaKt
+author: Kalanakt
 pubDatetime: 2024-02-20T15:22:00Z
 modDatetime: 2024-09-04T15:22:00Z
 title: Use Array Destructuring to Swap Variables in JavaScript

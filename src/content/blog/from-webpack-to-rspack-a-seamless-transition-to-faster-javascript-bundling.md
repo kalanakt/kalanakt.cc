@@ -1,5 +1,5 @@
 ---
-author: KalanaKt
+author: Kalanakt
 pubDatetime: 2024-08-06T03:15:27.000Z
 modDatetime: 2024-08-06T04:13:27.568Z
 title: From Webpack to Rspack. A Seamless Transition to Faster JavaScript Bundling
@@ -103,8 +103,9 @@ Rspack represents a significant advancement in JavaScript bundling technology, o
 As Rspack continues to evolve, it holds the potential to redefine how developers approach bundling in JavaScript projects. Whether you are starting a new project or considering a migration from Webpack, Rspack is worth exploring for its performance benefits and modern features.
 
 Citations:
-[1] <https://modernjs.dev/en/guides/advanced-features/rspack-start>
-[2] <https://rspack.dev/api/javascript-api/>
-[3] <https://github.com/web-infra-dev/awesome-rspack>
-[4] <https://rspack.dev>
-[5] <https://blog.logrocket.com/migrate-rspack-webpack/>
+
+- [1] <https://modernjs.dev/en/guides/advanced-features/rspack-start>
+- [2] <https://rspack.dev/api/javascript-api/>
+- [3] <https://github.com/web-infra-dev/awesome-rspack>
+- [4] <https://rspack.dev>
+- [5] <https://blog.logrocket.com/migrate-rspack-webpack/>
