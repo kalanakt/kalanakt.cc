@@ -2,7 +2,7 @@
 author: KalanaKt
 pubDatetime: 2024-02-28T12:22:00Z
 modDatetime: 2024-09-04T15:30:00Z
-title: Basics of web. Internet fundamentals
+title: Basics of web - Internet fundamentals
 slug: basics-of-web-Internet-fundamentals
 featured: false
 draft: false

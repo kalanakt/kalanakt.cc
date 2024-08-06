@@ -1,7 +1,7 @@
 ---
 author: KalanaKt
-pubDatetime: 2024-09-04T15:22:00Z
-modDatetime: 2024-09-04T15:22:00Z
+pubDatetime: 2024-08-04T05:15:52.000Z
+modDatetime: 2024-08-06T04:13:27.568Z
 title: Essential Git Commands Every Developer Should Know
 slug: essential-git-commands-every-developer-should-know
 featured: true

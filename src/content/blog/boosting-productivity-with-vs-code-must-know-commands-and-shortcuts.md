@@ -1,8 +1,8 @@
 ---
 author: KalanaKt
-pubDatetime: 2024-09-04T15:22:00Z
-modDatetime: 2024-09-04T15:30:00Z
-title: Boosting Productivity with VS Code. Must-Know Commands and Shortcuts
+pubDatetime: 2024-08-04T05:15:52.000Z
+modDatetime: 2024-08-06T04:11:52.634Z
+title: Boosting Productivity with VS Code - Must Know Commands and Shortcuts
 slug: boosting-productivity-with-vs-code-must-know-commands-and-shortcuts
 featured: true
 draft: false

@@ -7,7 +7,7 @@ import remarkMermaid from "remark-mermaidjs";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
-import vercel from "@astrojs/vercel/serverless";
+// import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,6 +45,6 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  output: "server",
-  adapter: vercel({ isr: true }),
+  // output: "static",
+  // adapter: vercel(),
 });
