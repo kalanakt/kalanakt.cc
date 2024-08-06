@@ -1,5 +1,5 @@
 ---
-author: Kalanakt
+author: kalanakt
 pubDatetime: 2024-08-04T05:15:52Z
 modDatetime: 2024-08-06T04:11:52Z
 title: Boosting Productivity with VS Code - Must Know Commands and Shortcuts

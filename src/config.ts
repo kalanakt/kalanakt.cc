@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "kalana kithmina",
   profile: "https://www.kalanakt.cc",
   desc: "Explore the portfolio of Kalana, a frontend developer with expertise in TypeScript, Rust, and full-stack programming. Discover projects, skills, and professional experience.",
-  siteTitle: "Kalana Kithmina (KalanaKt) | Developer & Innovator",
+  siteTitle: "Kalana Kithmina (kalanakt) | Developer & Innovator",
   title: "Kalana.Kt",
   keywords: [
     "kalana",

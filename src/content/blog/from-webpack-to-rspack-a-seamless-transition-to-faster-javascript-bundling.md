@@ -1,5 +1,5 @@
 ---
-author: Kalanakt
+author: kalanakt
 pubDatetime: 2024-08-06T03:15:27.000Z
 modDatetime: 2024-08-06T04:13:27.568Z
 title: From Webpack to Rspack. A Seamless Transition to Faster JavaScript Bundling
