@@ -1,0 +1,21 @@
+name: Keep GitHub Streak Alive
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+
+jobs:
+  keep-streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Make a Minor Update
+        run: |
+          echo "$(date) - Keeping the GitHub streak alive" >> streak_log.txt
+          git config --global user.name "kalamakt"
+          git config --global user.email "e19198@eng.pdn.ac.lk"
+          git add streak_log.txt
+          git commit -m "Keep streak alive: $(date)"
+          git push
