@@ -14,7 +14,7 @@ jobs:
       - name: Make a Minor Update
         run: |
           echo "$(date) - Keeping the GitHub streak alive" >> streak_log.txt
-          git config --global user.name "kalamakt"
+          git config --global user.name "kalanakt"
           git config --global user.email "e19198@eng.pdn.ac.lk"
           git add streak_log.txt
           git commit -m "Keep streak alive: $(date)"
