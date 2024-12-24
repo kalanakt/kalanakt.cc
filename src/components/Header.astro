@@ -1,10 +1,9 @@
 ---
 import { LOGO_IMAGE, SITE } from "@config";
-import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav?: "posts" | "works" | "about" | "search" | "tags";
 }
 
 const { activeNav } = Astro.props;
@@ -56,13 +55,13 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
-              Posts
+            <a href="/works/" class={activeNav === "works" ? "active" : ""}>
+              Works
             </a>
           </li>
           <li>
-            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
-              Tags
+            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
+              Blog
             </a>
           </li>
           <li>
@@ -109,11 +108,28 @@ const { activeNav } = Astro.props;
               </li>
             )
           }
+          <li>
+            <a
+              target="_blank"
+              href="/rss.xml"
+              class="rss-link"
+              aria-label="rss feed"
+              title="RSS Feed"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
+                ><path
+                  d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
+                ></path><path
+                  d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
+                ></path><circle cx="6" cy="18" r="2"></circle>
+              </svg>
+              <span class="sr-only">RSS Feed</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
-  <Hr />
 </header>
 
 <style>
@@ -121,7 +137,7 @@ const { activeNav } = Astro.props;
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
   .nav-container {
-    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
+    @apply mx-auto flex max-w-4xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
@@ -134,6 +150,10 @@ const { activeNav } = Astro.props;
   }
   .hamburger-menu svg {
     @apply h-6 w-6 scale-125 fill-skin-base;
+  }
+
+  .rss-icon {
+    @apply h-6 w-6 scale-125 hover:fill-skin-accent sm:scale-100;
   }
 
   nav {
