@@ -3,7 +3,6 @@ author: kalanakt
 pubDatetime: 2024-02-28T15:22:00Z
 modDatetime: 2024-09-04T15:22:00Z
 title: Add Mermaid Diagrams to Your Astro JS Website
-slug: add-mermaid-diagrams-to-astro-js-website
 featured: true
 draft: false
 tags:

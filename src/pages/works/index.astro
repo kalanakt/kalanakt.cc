@@ -1,15 +1,25 @@
 ---
+import Card from "@components/Card";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
 ---
 
 <Layout title={`Works | ${SITE.title}`}>
   <Header activeNav="works" />
   <Main pageTitle="Works" pageDesc="Here's My Some Of Featured Works">
-    <p>wvxhqwb</p>
+    <ul>
+      {
+        works.map(({ data, id }) => (
+          <Card href={`/posts/${id}/`} frontmatter={data} />
+        ))
+      }
+    </ul>
   </Main>
   <Footer />
 </Layout>

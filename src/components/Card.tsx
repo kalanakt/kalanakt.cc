@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
-  frontmatter: CollectionEntry<"blog">["data"];
+  frontmatter: CollectionEntry<"blog">["data"] | CollectionEntry<"works">["data"];
   secHeading?: boolean;
 }
 
@@ -17,7 +17,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
   };
 
   return (
-    <li className="my-6 rounded-md border border-dashed border-opacity-20 px-4 py-2">
+    <li className="my-6 rounded-md border border-skin-line border-dashed px-4 py-2">
       <a
         href={href}
         className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"

@@ -1,56 +1,24 @@
 ---
 import LinkButton from "@components/LinkButton.astro";
 import Socials from "@components/Socials.astro";
-import Ripple from "@components/ui/ripple";
-import { SOCIALS } from "@config";
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <section id="hero">
-  <h1>I'm Kalana kt</h1>
-
-  <p>
-    Welcome to my portfolio! I am a CTO at Netronk Innovation, with a passion
-    for learning new programming stacks. I have experience in freelancing on
-    platforms like Fiverr and am motivated to become a full-stack developer.
-    Explore my work and feel free to get in touch.
-  </p>
-  <p>
-    Check out the
-    <LinkButton
-      className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-      href="/about"
-    >
-      About
-    </LinkButton> for more info.
-  </p>
-  {
-    // only display if at least one social link is enabled
-    socialCount > 0 && (
-      <div class="social-wrapper">
-        <Socials />
-      </div>
-    )
-  }
-  <Ripple client:load />
+  <div class="my-8 flex flex-col gap-4 md:my-12">
+    <h1 class="text-4xl font-bold tracking-wide">
+      Hi, I'm <span class="text-primary">Kalana Kt.</span>
+    </h1>
+    <p class="text-lg">
+      Welcome to my portfolio! I am a CTO at Netronk Innovation, with a passion
+      for learning new programming stacks. I have experience in freelancing on
+      platforms like Fiverr and am motivated to become a full-stack developer.
+      Explore my work and feel free to get in touch. Check out the <LinkButton
+        className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+        href="/about"
+      >
+        About
+      </LinkButton> for more info.
+    </p>
+    <Socials />
+  </div>
 </section>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply md:my-24 my-8 flex flex-col items-center pb-6 pt-8 sm:my-20;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-semibold sm:my-8 sm:text-5xl;
-  }
-  #hero p {
-    @apply my-2 text-pretty text-center sm:my-6;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-</style>

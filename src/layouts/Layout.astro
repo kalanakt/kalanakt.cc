@@ -1,7 +1,6 @@
 ---
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
-import { ViewTransitions } from "astro:transitions";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -133,11 +132,13 @@ const structuredData = {
       )
     }
 
-    <ViewTransitions />
-
     <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
     <slot />
+    <div
+      class="fixed inset-0 z-[-1] h-full w-full bg-[url('/noise.png')] bg-[length:128px_128px] bg-repeat opacity-[0.06]"
+    >
+    </div>
   </body>
 </html>

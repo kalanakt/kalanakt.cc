@@ -18,17 +18,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content">
     <Hero />
-
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
-              ({ data, slug }, index) =>
+              ({ data, id }, index) =>
                 index < SITE.postPerIndex && (
                   <Card
-                    href={`/posts/${slug}/`}
+                    href={`/posts/${id}/`}
                     frontmatter={data}
                     secHeading={false}
                   />
@@ -38,7 +37,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </section>
       )
     }
-
     <!-- <Gallery client:load /> -->
   </main>
   <Footer />
